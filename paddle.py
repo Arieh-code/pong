@@ -4,17 +4,13 @@ from turtle import Turtle
 class Paddle(Turtle):
     def __init__(self, side: str):
         super().__init__()
-        self.position = side
-        self.create_paddle()
-
-    def create_paddle(self):
         self.shape("square")
         self.color("white")
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.penup()
-        if self.position == "right":
+        if side == "right":
             self.goto(350, 0)
-        elif self.position == "left":
+        elif side == "left":
             self.goto(-350, 0)
 
     def go_up(self):
