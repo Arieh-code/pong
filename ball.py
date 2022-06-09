@@ -43,3 +43,19 @@ class Ball(Turtle):
         elif self.direction is "down_left":
             self.direction = "up_left"
             self.move()
+
+    def hit(self, side: str):
+        if side is "left":
+            if self.direction is "up_left":
+                self.direction = "up_right"
+                self.move()
+            elif self.direction is "down_left":
+                self.direction = "down_right"
+                self.move()
+        else:
+            if self.direction is "up_right":
+                self.direction = "up_left"
+                self.move()
+            elif self.direction is "down_right":
+                self.direction = "down_left"
+                self.move()
